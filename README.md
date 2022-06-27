@@ -1,7 +1,7 @@
 # HRUKA 外部操作ツールセット
 このリポジトリには、HARUKAに対して加工ファイルの送信や処理中の加工ファイル情報の読込などを外部から行うためのライブラリ、またそのライブラリを利用したCLIツールおよびWebアプリケーションのプロジェクトが含まれています。
 ライブラリを使用することでユーザー独自のプログラムからHARUKAの操作を行えます。またWebアプリに応用して加工機接続中のPC以外からHARUKAを遠隔操作するといったことも可能になります。その実装の一例がolhrk_webです。
-olhrl_webのビルド済バイナリも配布しています。[リリースページ](http://example.com)からご参照ください。
+olhrl_webのビルド済バイナリも配布しています。[olhrk_webのリリースページ](https://github.com/OHLASER/olhrk_web/releases)からご参照ください。
 
 対象OS:Windows 10
 開発環境:Visual Studio 2017
@@ -30,7 +30,7 @@ git submodule update --init
 ### oldlclr - HARUKA通信用モジュール
 oldlclrは、実行中のHARUKAを制御するC#ライブラリです。以下の公開メソッドを備えています。
 下表のクラスが登録されています。一部クラスとメソッドはHARUKA側の利用で、クライアント側では使用を想定していません。
-仕様の詳細は[このページ](http://example.com)を参照ください。
+仕様の詳細は[moduleSpec.md](https://github.com/OHLASER/olexttool/blob/master/moduleSpec.md)を参照ください。
 
 ### olhrk_web
 olhrk_webはC#で記述された ASP.NET Webアプリケーションです。HARUKAが動作しているWindowsでIISを起動して使用します。httpプロトコルを通じて、HARUKAの状態取得、データ転送を行うことができます。
