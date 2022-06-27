@@ -23,6 +23,7 @@ git submodule update --init
 |  oldlclr  |  CLIツール/Webアプリ共通で使用されるHARUKA操作用ライブラリの.NETプロジェクトが含まれます。olhrk_client_0.slnに参照されています。  |
 |  olhrk_client  |  CLIツールの.NETプロジェクトが含まれます。olhrk_client_0.slnに参照されています。  |
 |  olhrk_web  |  WebアプリのASP.NETプロジェクトが含まれます。olhrk_client_0.slnに参照されています。  |
+|  docs  |  本ドキュメントの画像等リソースを含みます。  |
 |  README.md  |  本ドキュメントです。  |
 
 ## 各プロジェクトの概要
@@ -31,7 +32,7 @@ oldlclrは、実行中のHARUKAを制御するためのC#ライブラリです�
 仕様の詳細は[oldlclr/README.md](https://github.com/OHLASER/oldlclr)を参照ください。
 
 ### olhrk_web
-olhrk_webはC#で記述された ASP.NET Webアプリケーションです。HARUKAの遠隔操作が可能です。HARUKAが動作しているWindowsでIISを起動して使用します。httpプロトコルを通じて、HARUKAの状態取得、データ転送を行うことができます。
+olhrk_webはC#で記述されたASP.NET Webアプリケーションです。HARUKAの遠隔操作が可能です。HARUKAが動作しているWindowsでIISを起動して使用します。httpプロトコルを通じて、HARUKAの状態取得、データ転送を行うことができます。
 HARUKAとの通信は以下のようにREST APIを通して行われます。
 * HTTP[GET] Home/Staus 
  json形式のHARUKAの状態を取得することができます。
@@ -39,8 +40,14 @@ HARUKAとの通信は以下のようにREST APIを通して行われます。
  加工データを本文に追加することで、HARUKAにデータ転送を送ることが出来ます。
  
 
-olhrkの使用上の注意点等については[olhrk_web/README.md](http://github.com/OHLASER/olhrk_web)を参照ください。
+olhrk_webの使用方法、注意点等については[olhrk_web/README.md](http://github.com/OHLASER/olhrk_web)を参照ください。
 
 ### olhrk_client
 HARUKAが動作しているWindowsで実行できるC#実装のコンソールプログラムです。コマンド引数を利用して、HARUKAの状態取得、加工データの転送などが行えます。当該プログラムの利用方法は、IISを利用しないWebサーバを構築する場合に使用します。
+
+## 備考
+
+### ワークロード
+弊社では、図示のワークロードを使用しています。コンパイルエラーなどのエラーが生じた場合の参考にしてください。
+![workload](docs/workload00.PNG)
 
