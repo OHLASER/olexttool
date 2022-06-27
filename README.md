@@ -27,11 +27,11 @@ git submodule update --init
 
 ## 各プロジェクトの概要
 ### oldlclr - HARUKA通信用モジュール
-oldlclrは、実行中のHARUKAを制御するためのC#ライブラリです。
-仕様の詳細は[oldlclr/README.md](https://github.com/OHLASER/oldlclr/blob/master/README.md)を参照ください。
+oldlclrは、実行中のHARUKAを制御するためのC#ライブラリです。HARUKAとのプロセス間通信を行います。
+仕様の詳細は[oldlclr/README.md](https://github.com/OHLASER/oldlclr)を参照ください。
 
 ### olhrk_web
-olhrk_webはC#で記述された ASP.NET Webアプリケーションです。HARUKAが動作しているWindowsでIISを起動して使用します。httpプロトコルを通じて、HARUKAの状態取得、データ転送を行うことができます。
+olhrk_webはC#で記述された ASP.NET Webアプリケーションです。HARUKAの遠隔操作が可能です。HARUKAが動作しているWindowsでIISを起動して使用します。httpプロトコルを通じて、HARUKAの状態取得、データ転送を行うことができます。
 HARUKAとの通信は以下のようにREST APIを通して行われます。
 * HTTP[GET] Home/Staus 
  json形式のHARUKAの状態を取得することができます。
@@ -39,21 +39,8 @@ HARUKAとの通信は以下のようにREST APIを通して行われます。
  加工データを本文に追加することで、HARUKAにデータ転送を送ることが出来ます。
  
 
+olhrkの使用上の注意点等については[olhrk_web/README.md](http://github.com/OHLASER/olhrk_web)を参照ください。
+
 ### olhrk_client
-HARUKAが動作しているWindowsで実行できるC#コンソールプログラムです。コマンド引数を利用して、HARUKAの状態取得、加工データの転送などが行えます。当該プログラムの利用方法は、IISを利用しないWebサーバを構築する場合に使用します。
+HARUKAが動作しているWindowsで実行できるC#実装のコンソールプログラムです。コマンド引数を利用して、HARUKAの状態取得、加工データの転送などが行えます。当該プログラムの利用方法は、IISを利用しないWebサーバを構築する場合に使用します。
 
-## IISの設定
-olhrk_webを使用する際、IISの設定についての注意点を記載します。
-### IISマネージャ
-olhrk_webを使用するサイトに紐づくアプリケーションプールの詳細設定画面上で、以下のように項目設定が行われている必要があります。
-|  項目  |  説明  |
-| ---- | ---- |
-|  32ビットアプリケーションの有効化  | True  |
-|  ID  | LocalSystem  |
-<画像>
-### Windowsの機能
-以下のようにwindowsの機能を有効化する必要があります。
-<画像>
-
-### その他
-IPアドレス、ポートの設定は任意の値で問題ありません。
