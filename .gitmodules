@@ -1,0 +1,9 @@
+[submodule "oldlclr"]
+	path = oldlclr
+	url = https://github.com/OHLASER/oldlclr
+[submodule "olhrk_client"]
+	path = olhrk_client
+	url = https://github.com/OHLASER/olhrk_client
+[submodule "olhrk_web"]
+	path = olhrk_web
+	url = https://github.com/OHLASER/olhrk_web
