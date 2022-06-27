@@ -6,13 +6,25 @@ olhrl_webのビルド済バイナリも配布しています。[リリースペ�
 対象OS:Windows 10
 開発環境:Visual Studio 2017
 
-## ディレクトリ構成
+## 導入
+このgitリポジトリをクローンした後、サブモジュールの取得が必要です。
+具体的には以下のような手順でコマンドを実行してください。
+```sh
+git clone https://github.com/OHLASER/olexttool
+cd olexttool
+git submodule update --init
+```
+
+## ファイル/ディレクトリ構成
+導入の作業後、以下のようなファイル構成となります。
 |  ディレクトリ  |  説明  |
 | ---- | ---- |
 |  msvs  |  外部操作に関する各種プロジェクトを含むソリューションファイル(olhrk_client_0.sln)が含まれています。  |
 |  oldlclr  |  CLIツール/Webアプリ共通で使用されるHARUKA操作用ライブラリの.NETプロジェクトが含まれます。olhrk_client_0.slnに参照されています。  |
 |  olhrk_client  |  CLIツールの.NETプロジェクトが含まれます。olhrk_client_0.slnに参照されています。  |
 |  olhrk_web  |  WebアプリのASP.NETプロジェクトが含まれます。olhrk_client_0.slnに参照されています。  |
+|  README.md  |  本ドキュメントです。  |
+|  moduleSpec.md  |  oldlclrの詳細な仕様を記載しています。  |
 
 ## 各プロジェクトの概要
 ### oldlclr - HARUKA通信用モジュール
