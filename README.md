@@ -1,7 +1,7 @@
 # HRUKA 外部操作ツールセット
-このリポジトリには、HARUKAに対して加工ファイルの送信や処理中の加工ファイル情報の読込などを外部から行うためのライブラリ、またそのライブラリを利用したCLIツールおよびWebアプリケーションのプロジェクトが含まれています。
-ライブラリを使用することでユーザー独自のプログラムからHARUKAの操作を行えます。またWebアプリに応用して加工機接続中のPC以外からHARUKAを遠隔操作するといったことも可能になります。その実装の一例がolhrk_webです。
-olhrl_webのビルド済バイナリも配布しており、[olhrk_webのリリースページ](https://github.com/OHLASER/olhrk_web/releases)からご参照いただけます。
+このリポジトリには、HARUKAに対して一定の操作を外部から行うためのライブラリ、またそのライブラリを利用したCLIツールおよびWebアプリケーションのプロジェクトが含まれています。
+ライブラリを使用することでユーザー独自のプログラムから加工データの送信、HARUKAの状態取得といった操作を行えます。またWebアプリに応用して遠隔PCからそれらの操作を行うといったことも可能です。その実装の一例がolhrk_webです。
+olhrl_webのビルド済バイナリも配布しており、[olhrk_webのリリースページ](https://github.com/OHLASER/olhrk_web/releases) からご参照いただけます。
 
 対象OS:Windows 10
 開発環境:Visual Studio 2017
@@ -30,7 +30,7 @@ oldlclrは、実行中のHARUKAを制御するためのC#ライブラリです�
 仕様の詳細は[oldlclr/README.md](https://github.com/OHLASER/oldlclr)を参照ください。
 
 ### olhrk_web
-olhrk_webはC#で記述されたASP.NET Webアプリケーションです。HARUKAの遠隔操作が可能です。HARUKAが動作しているWindowsでIISを起動して使用します。httpプロトコルを通じて、HARUKAの状態取得、データ転送を行うことができます。
+olhrk_webはC#で記述されたASP.NET Webアプリケーションです。HARUKAに対して一定の遠隔操作が可能です。HARUKAが動作しているWindowsでIISを起動して使用します。httpプロトコルを通じて、HARUKAの状態取得、データ転送を行うことができます。
 HARUKAとの通信は以下のようにREST APIを通して行われます。
 * HTTP[GET] Home/Staus 
  json形式のHARUKAの状態を取得することができます。
