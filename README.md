@@ -7,7 +7,7 @@ olhrl_webのビルド済バイナリも配布しており、[olhrk_webのリリ�
 開発環境:Visual Studio 2017
 
 ## 導入
-このgitリポジトリはサブモジュールを含ので、クローン時にそれらの取得も必要です。
+このgitリポジトリはサブモジュールを含むので、クローン時にそれらの取得も必要です。
 具体的には以下のようにコマンドを実行してください。
 ```sh
 git clone https://github.com/OHLASER/olexttool --recursive
